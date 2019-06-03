@@ -36,7 +36,7 @@ curl iac.sh/sentinel | sh
 Download Installer
 
 ``` shell
-curl -LO https://raw.github.com/robertpeteuil/sentinel-installer/master/sentinel/sentinel-install.sh
+curl -LO https://raw.github.com/robertpeteuil/sentinel-installer/master/sentinel-install.sh
 chmod +x sentinel-install.sh
 ```
 
