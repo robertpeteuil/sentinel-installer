@@ -25,34 +25,39 @@ Options:
 
 This installer is similar to my [Terraform Installer](https://github.com/robertpeteuil/terraform-installer) and [Packer Installer](https://github.com/robertpeteuil/packer-installer)
 
-## Install
+## Express install latest version via my bootstrap server (iac.sh or https://iac.sh)
+
+``` shell
+curl iac.sh/sentinel | sh
+```
+
+## Download and Use Locally
 
 Download Installer
 
 ``` shell
-curl -LO https://raw.github.com/robertpeteuil/sentinel-installer/master/sentinel/simulator-install.sh
+curl -LO https://raw.github.com/robertpeteuil/sentinel-installer/master/sentinel/sentinel-install.sh
 chmod +x sentinel-install.sh
 ```
 
-## Use
+Download installer via my bootstrap server (iac.sh or https://iac.sh)
+
+``` shell
+curl iac.sh/sentinel.sh | sh
+# installer downloaded as sentinel-install.sh to current directory
+```
 
 ### Run local installer
 
 ``` shell
 ./sentinel-install.sh
 
-# usage: sentinel simulator-install.sh [-i VERSION] [-a] [-c] [-h] [-v]
+# usage: sentinel-install.sh [-i VERSION] [-a] [-c] [-h] [-v]
 #      -i VERSION : specify version to install in format '' (OPTIONAL)
 #      -a : automatically use sudo to install to /usr/local/bin
 #      -c : leave binary in working directory (for CI/DevOps use)
 #      -h : help
 #      -v : display sentinel-install.sh version
-```
-
-### Express install latest version via `iac.sh` or `https://iac.sh` (my bootstrap server)
-
-``` shell
-curl iac.sh/sentinel | sh
 ```
 
 ## System Requirements
