@@ -25,12 +25,6 @@ Options:
 
 This installer is similar to my [Terraform Installer](https://github.com/robertpeteuil/terraform-installer) and [Packer Installer](https://github.com/robertpeteuil/packer-installer)
 
-## Express install latest version via my bootstrap server (iac.sh or https://iac.sh)
-
-``` shell
-curl iac.sh/sentinel | sh
-```
-
 ## Download and Use Locally
 
 Download Installer
@@ -43,8 +37,9 @@ chmod +x sentinel-install.sh
 Download installer via my bootstrap server (iac.sh or https://iac.sh)
 
 ``` shell
-curl iac.sh/sentinel.sh | sh
-# installer downloaded as sentinel-install.sh to current directory
+curl iac.sh/sentinel > getinst.sh
+bash getinst.sh
+# installer downloaded as sentinel-install.sh in current directory
 ```
 
 ### Run local installer
