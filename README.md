@@ -1,4 +1,4 @@
-# Sentinel Simulator Installer - Automated Installation
+# Sentinel Installer - Automated Installation
 
 ## Automatically Download, Extract and Install Latest or Specific Version
 
@@ -8,7 +8,7 @@
 
 ---
 
-The **sentinel-install** script automates the process of downloading and installing HashiCorp Sentinel Simulator.  It provides an ideal method for installing on new hosts, installing updates and downgrading if necessary.
+The **sentinel-install** script automates the process of downloading and installing HashiCorp Sentinel.  It provides an ideal method for installing on new hosts, installing updates and downgrading if necessary.
 
 This script detects the latest version, OS and CPU-Architecture and allows installation to local or system locations.  Optional parameters allow installing a specific version and installing to /usr/local/bin without prompting.
 
@@ -60,7 +60,7 @@ bash getinst.sh
 - System with Bash Shell (Linux, macOS, Windows Subsystem for Linux)
 - `unzip` - Sentinel Simulator downloads are in zip format
 - `curl` or `wget` - script will use either one to retrieve metadata and download
-- `jq` - required to get latest version from hashicorp downloads
+- `jq` - required to get latest version from HashiCorp downloads
 
 ## Script Process Details
 
@@ -91,4 +91,4 @@ I am a HashiCorp employee, but this is a personal project and not officially end
 
 ## License
 
-Apache 2.0 License - Copyright (c) 2019    Robert Peteuil
+Apache 2.0 License - Copyright (c) 2020    Robert Peteuil

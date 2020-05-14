@@ -2,11 +2,11 @@
 
 set -e
 
-# SENTINEL SIMULATOR INSTALLER - Automated HashiCorp Sentinel Installation
-#   Apache 2 License - Copyright (c) 2019  Robert Peteuil  @RobertPeteuil
+# SENTINEL INSTALLER - Automated HashiCorp Sentinel Installation
+#   Apache 2 License - Copyright (c) 2020  Robert Peteuil  @RobertPeteuil
 #
 #     Automatically Download, Extract and Install
-#        Latest or Specific Version of sentinel simulator
+#        Latest or Specific Version of Sentinel
 #
 #   from: https://github.com/robertpeteuil/sentinel-installer
 
@@ -14,8 +14,8 @@ set -e
 # sudoInstall=true
 
 scriptname=$(basename "$0")
-scriptbuildnum="1.5.1"
-scriptbuilddate="2019-05-28"
+scriptbuildnum="1.5.2"
+scriptbuilddate="2020-05-14"
 
 # CHECK DEPENDANCIES AND SET NET RETRIEVAL TOOL
 if ! unzip -h 2&> /dev/null; then
@@ -42,9 +42,9 @@ displayVer() {
 }
 
 usage() {
-  [[ "$1" ]] && echo -e "Download and Install Sentinel Simulator - Latest Version unless '-i' specified\n"
+  [[ "$1" ]] && echo -e "Download and install HashiCorp Sentinel - Latest Version unless '-i' specified\n"
   echo -e "usage: ${scriptname} [-i VERSION] [-a] [-c] [-h] [-v]"
-  echo -e "     -i VERSION\t: specify version to install in format '$LATEST' (OPTIONAL)"
+  echo -e "     -i VERSION\t: specify version to install in format '0.15.4' (OPTIONAL)"
   echo -e "     -a\t\t: automatically use sudo to install to /usr/local/bin"
   echo -e "     -c\t\t: leave binary in working directory (for CI/DevOps use)"
   echo -e "     -h\t\t: help"
@@ -54,7 +54,7 @@ usage() {
 getLatest() {
   # USE NET RETRIEVAL TOOL TO GET LATEST VERSION
   case "${nettool}" in
-    # jq installed - parse version from hashicorp website
+    # jq installed - parse version from HashiCorp website
     wget)
       LATEST_ARR=($(wget -q -O- https://releases.hashicorp.com/index.json 2>/dev/null | jq -r '.sentinel.versions[].version' | sort -t. -k 1,1nr -k 2,2nr -k 3,3nr))
       ;;
@@ -202,9 +202,9 @@ fi
 unzip -qq "$FILENAME" || exit 1
 
 if [[ ! "$cwdInstall" ]]; then
-  # COPY TO DESTINATION
+  # MOVE TO DESTINATION
   mkdir -p "${BINDIR}" || exit 1
-  ${CMDPREFIX} cp -f sentinel "$BINDIR" || exit 1
+  ${CMDPREFIX} mv sentinel "$BINDIR" || exit 1
 
   # CLEANUP AND EXIT
   cd "${TMPDIR}" || exit 1
